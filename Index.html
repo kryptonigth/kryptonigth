@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nosso Amor Eterno</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('fundodosite.png'); /* Imagem de fundo */
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: pink;
+            text-align: center;
+            font-family: 'Pinyon Script', cursive;
+            margin: 0;
+            overflow: auto;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        #countdown {
+            font-size: 2em;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .photos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video).mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+    <h1>Meu amor por voce e como o primeiro dia em que te vi, mas multiplicado por cada momento que passamos juntos. Ter voce ao meu lado faz de cada dia um presente, e de cada memoria, um tesouro guardado com carinho. Voce e minha melhor escolha, minha eterna namorada e o amor da minha vida, ontem, hoje e sempre, eu te amo.</h1>
+    <p>Estamos juntos desde: 26/12/2021</p>
+    <p id="countdown"></p>
+    <p>Te amo, Mariana!</p>
+    <div class="photos">
+        <img src="IMG-20230102-WA0018.jpg" alt="Foto do casal">
+        <img src="IMG-20230101-WA0023.jpg" alt="Foto do casal">
+        <img src="IMG-20221214-WA0002.jpg" alt="Foto do casal">
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const startDate = new Date(2021, 11, 26);
+            const now = new Date();
+            const difference = now - startDate;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `Estamos juntos há: ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
